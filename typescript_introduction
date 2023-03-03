@@ -1,0 +1,108 @@
+
+!!!! For Color define the File as an Programming Language inside VS Code !!!!
+
+
+/*
+  Types in TypeScript
+
+  In normal JavaScript defining a Variable would look like this:
+ * let name = 'Raj'; 
+  So it automatically knows which Datatype name schould be (string)
+
+  In TypeScript you have to assign the Datatype first:
+  * let name: string = 'Raj'; (works)
+  ? name = 5; (ERROR), because name is assigned to the Datatype of an string
+
+  ---------------------------
+  Here are different types in TypeScript:
+
+  -> let name: string; 
+  -> let age: number;
+  -> let isStudent: boolean;
+  -> let hoobies: string[];       Hier wird ein Array von Strings erwartet
+  -> let role: [number, string];  Hier wird ein Tupel erwartet mit 2 verschiedenen Datentypen
+
+  type Person {   // If were are using an Object, were are using a Type Definition
+    name: string;
+    age: number;
+  }
+
+  *Now we can assign the Person Object to an Variable, which takes the two given Properties (String, Number)
+  let person: Person = {
+    name: 'Raj',
+    age: 22
+  };
+
+  If we want to make one property optional then we have to give it a question mark after an Datatyp (z.B):
+  * age?:number;
+
+  If we want to have an Array of the Object than we can assign it in that way:
+  * let lotsofPeople: Person[];
+
+
+  ---------------------------
+  Union
+
+  Age can be either a number or a string if we use the union operator (|)
+  *let age: number | string;
+
+  ---------------------------
+  Defining a Function
+
+  (1) Defining Type in an Variable 
+  *let printName: Function;
+
+  (2) We are defining a function which takes as a parameter a String and return nothing (void)
+  *let printName: (name: string) => void;
+      The return type can be anything (datatyp)
+
+  The Return value void returns undefined but the Type defintion:
+  * never 
+  returns nothing ever (e.x) let printName: (name: string) => never; 
+
+  ---------------------------
+
+  Declare a variable with an datatyp of an "any" value
+  * let name: any; 
+  (Not recommended)
+
+  ---------------------------
+
+  If you don't know the type of a variable then u can use unknown as a type definition
+  * let personName: unknown;
+
+  ---------------------------
+  Inteface works Syntaxliy the same way as type would do (e.x):
+
+  interface Person {
+    name: string;
+    age?: number;
+  }
+  
+  Difference between a type and a interface:
+  The Syntax of Extending two differnet types or interfaces like:
+
+  (1)
+  type X = {
+    a: string;
+    b: number;
+  }
+  ! Now we are going to Extend another Type Y with a type of X
+  type Y = X {
+    c: string;
+    d: number;
+  }
+  let y: Y = { ... };
+
+  (2)
+  interface Person {
+    name: string;
+    age?: number;
+  }
+  ! Now we are going to Extend antoher Interface Guy with an Interface of Person
+  interface Guy extends Person {
+    profession: string;
+  }
+  * An Type can also be extended by an Interface (other way around) -> Same Syntax
+
+*/
